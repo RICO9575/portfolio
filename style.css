@@ -11,71 +11,76 @@ body {
     line-height: 1.6;
 }
 
-/* 헤더 */
+/* 데스크톱 헤더 숨김 */
 header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    background-color: #ffffff;
-    padding: 30px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    z-index: 100;
-    border-bottom: 1px solid #f0f0f0;
+    display: none;
 }
 
-.logo h1 {
-    font-size: 20px;
+/* 사이드바 (항상 표시) */
+.sidebar {
+    display: block;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 250px;
+    background-color: #ffffff;
+    border-right: 1px solid #f0f0f0;
+    padding: 50px 30px;
+    z-index: 100;
+    overflow-y: auto;
+}
+
+
+.logo-sidebar h2 {
+    font-size: 18px;
     font-weight: 400;
     letter-spacing: 2px;
+    margin-bottom: 50px;
 }
 
-nav {
-    display: flex;
-    align-items: center;
-    gap: 40px;
+.logo-sidebar a {
+    text-decoration: none;
+    color: #000;
 }
 
-.menu {
-    display: flex;
+.sidebar-nav ul {
     list-style: none;
-    gap: 30px;
+    margin-bottom: 40px;
 }
 
-.menu li a {
+.sidebar-nav ul li {
+    margin-bottom: 25px;
+}
+
+.sidebar-nav ul li a {
     text-decoration: none;
     color: #999;
-    font-size: 14px;
+    font-size: 13px;
     transition: color 0.3s;
     letter-spacing: 0.5px;
 }
 
-.menu li a:hover,
-.menu li a.active {
+.sidebar-nav ul li a:hover,
+.sidebar-nav ul li a.active {
     color: #000;
 }
 
-.contact-btn {
+.contact-link {
     text-decoration: none;
     color: #999;
-    font-size: 14px;
+    font-size: 13px;
     transition: color 0.3s;
 }
 
-.contact-btn:hover {
+.contact-link:hover {
     color: #000;
-}
-
-/* 사이드바 (모바일용) */
-.sidebar {
-    display: none;
 }
 
 /* 메인 콘텐츠 */
 main {
-    margin-top: 100px;
+    margin-left: 250px;
+    margin-top: 50px;
     padding: 0 50px 50px;
 }
 
@@ -187,83 +192,25 @@ main {
         gap: 20px;
     }
     
-    header {
-        padding: 20px 30px;
-    }
-    
     main {
         padding: 0 30px 30px;
-        margin-top: 80px;
+        margin-top: 30px;
     }
 }
 
 @media screen and (max-width: 768px) {
-    header {
-        display: none;
-    }
-    
     .sidebar {
-        display: block;
-        position: fixed;
-        left: 0;
-        top: 0;
-        bottom: 0;
-        width: 250px;
-        background-color: #ffffff;
-        border-right: 1px solid #f0f0f0;
-        padding: 30px;
-        z-index: 100;
-        overflow-y: auto;
+        width: 200px;
+        padding: 30px 20px;
     }
     
     .logo-sidebar h2 {
-        font-size: 18px;
-        font-weight: 400;
-        letter-spacing: 2px;
+        font-size: 16px;
         margin-bottom: 40px;
     }
     
-    .logo-sidebar a {
-        text-decoration: none;
-        color: #000;
-    }
-    
-    .sidebar-nav ul {
-        list-style: none;
-        margin-bottom: 30px;
-    }
-    
-    .sidebar-nav ul li {
-        margin-bottom: 20px;
-    }
-    
-    .sidebar-nav ul li a {
-        text-decoration: none;
-        color: #999;
-        font-size: 14px;
-        transition: color 0.3s;
-        text-transform: uppercase;
-        letter-spacing: 0.5px;
-    }
-    
-    .sidebar-nav ul li a:hover,
-    .sidebar-nav ul li a.active {
-        color: #000;
-    }
-    
-    .contact-link {
-        text-decoration: none;
-        color: #999;
-        font-size: 14px;
-        transition: color 0.3s;
-    }
-    
-    .contact-link:hover {
-        color: #000;
-    }
-    
     main {
-        margin-left: 250px;
+        margin-left: 200px;
         margin-top: 30px;
         padding: 0 20px 20px;
     }
@@ -281,11 +228,25 @@ main {
 
 @media screen and (max-width: 480px) {
     .sidebar {
-        width: 200px;
+        width: 150px;
+        padding: 20px 15px;
+    }
+    
+    .logo-sidebar h2 {
+        font-size: 14px;
+    }
+    
+    .sidebar-nav ul li {
+        margin-bottom: 20px;
+    }
+    
+    .sidebar-nav ul li a {
+        font-size: 11px;
     }
     
     main {
-        margin-left: 200px;
+        margin-left: 150px;
+        padding: 0 15px 15px;
     }
 }
 
